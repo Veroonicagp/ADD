@@ -1,0 +1,45 @@
+{
+    "kind": "collectionType",
+    "collectionName": "people",
+    "info": {
+        "singularName": "person",
+        "pluralName": "people",
+        "displayName": "Person",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "email": {
+            "type": "email"
+        },
+        "birthday": {
+            "type": "date"
+        },
+        "gender": {
+            "type": "enumeration",
+            "enum": [
+                "female",
+                "male",
+                "other"
+            ]
+        },
+        "group": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::group.group",
+            "inversedBy": "people"
+        },
+        "user": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "person"
+        }
+    }
+}

@@ -1,1 +1,0 @@
-Strapy y Caludinary
